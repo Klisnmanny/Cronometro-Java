@@ -21,7 +21,7 @@ public class cronometro extends javax.swing.JFrame {
     
     public cronometro() {
         initComponents();
-        cronos = new Timer(10, (ActionEvent e) ->{
+        cronos = new Timer(1000, (ActionEvent e) ->{
             IniciarCronometro();
         });
     }
@@ -32,12 +32,9 @@ public class cronometro extends javax.swing.JFrame {
         
     }
        private void contagem(){
-        milesimos++;
+        segundos++;
         
-        if (milesimos == 100){
-            milesimos = 0;
-            segundos++;
-        }
+     
         
         if (segundos == 60){
             segundos = 0;
@@ -51,7 +48,7 @@ public class cronometro extends javax.swing.JFrame {
     }
        
     private void MudarTempo(){
-        String cronometro = horas + "H:" + minutos +("m:") + segundos;
+        String cronometro = horas + "H:" + minutos +("m:") + segundos+("s");
         lbCronos.setText(cronometro);
         
         
